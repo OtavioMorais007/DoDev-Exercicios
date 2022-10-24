@@ -28,12 +28,18 @@ while(desejaContinuar){
 }
 
 for (var i = 0; i <= arrayA.length; i++) {
-    for (var j = 0; j < arrayA.length; j++) {
-        if (arrayA[i] == arrayB[j] && arrayA[i] > 5) {
+    for (var j = 0; j <= arrayA.length; j++) {
+        if (arrayA[i] == arrayB[j] ) {
             arrayC[contador] = arrayA[i]
             contador++
         }
     }
+    
+    if(arrayA[i] % 2 == 1){
+        arrayC[contador] = arrayA[i]
+        contador++
+    }
+    console.log(i)
 }
 
 console.log('Array A = ' + arrayA)

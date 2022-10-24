@@ -3,15 +3,21 @@ porém, se o usuário digitar um número que já foi inserido, o seu programa de
 pedir para ele digitar outro número.*/
 
 var array = []
+var contador = 0
 
-for (var i = 0; i < 5; i++) {
-    array[i] = parseInt(prompt('Insira um número: '))
-    
-    for (var j = 0; j <= array.length; j++) {
-        if (array[i] == array[j]) {
-            array[i] = parseInt(prompt('Este número já foi inserido, insira um diferente'))
+for (var indexA = 0; indexA < 5; indexA++) {
+    array[indexA] = parseInt(prompt('Insira um número: '))
+
+    if (contador != 0) {
+        for(var indexB = 0; indexB < 5; indexB++){
+            if(indexA > indexB || indexA < indexB){
+                if(array[indexA] == array[indexB]){
+                    array[indexA] = parseInt(prompt('Este número já foi inserido, insera um diferente: '))
+                }
+            }
         }
     }
+    contador++
 }
 
-console.log(array)
+console.log('Array inserido: ' + array)
